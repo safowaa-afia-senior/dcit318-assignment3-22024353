@@ -107,8 +107,8 @@ namespace StudentResultSystem
         }
 
         public void WriteReportToFile(
-            string filePath,
-            List<Student> students)
+            List<Student> students,
+            string filePath)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {
@@ -155,8 +155,8 @@ namespace StudentResultSystem
                     processor.ReadStudentsFromFile(inputFile);
 
                 processor.WriteReportToFile(
-                    outputFile,
-                    students);
+                    students,
+                    outputFile);
 
                 foreach (Student student in students)
                 {
