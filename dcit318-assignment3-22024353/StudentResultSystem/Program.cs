@@ -9,9 +9,9 @@ namespace StudentResultSystem
     {
         public int Id { get; set; }
         public string FullName { get; set; }
-        public double Score { get; set; }
+        public int Score { get; set; }
 
-        public Student(int id, string fullName, double score)
+        public Student(int id, string fullName, int score)
         {
             Id = id;
             FullName = fullName;
@@ -86,7 +86,7 @@ namespace StudentResultSystem
                             "Student name is missing.");
                     }
 
-                    if (!double.TryParse(fields[2].Trim(), out double score))
+                    if (!int.TryParse(fields[2].Trim(), out int score))
                     {
                         throw new InvalidScoreFormatException(
                             $"Invalid score format for {fullName}.");
